@@ -8,12 +8,13 @@ ADD https://github.com/krallin/tini/releases/download/${TINI_VERSION}/tini /usr/
 RUN \
   chmod a+x /usr/bin/tini &&\
   mkdir -p /usr/share/jenkins/rancher
-  
+
 ## Configurations
 ADD confd /etc/confd
 
 ## Scripts
 ADD jenkins.sh /usr/share/jenkins/rancher/jenkins.sh
+RUN chmod a+x  /usr/share/jenkins/rancher/jenkins.sh
 
 VOLUME /usr/share/jenkins/rancher
 
