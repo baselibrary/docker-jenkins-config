@@ -15,7 +15,7 @@ for version in "${versions[@]}"; do
   fullVersion="$(curl -fsSL "${repoPackage}" | gunzip | awk -v pkgname="jenkins" -F ': ' '$1 == "Package" { pkg = $2 } pkg == pkgname && $1 == "Version" { print $2 }' | sort -rV | head -n1 )"
 	(
 		set -x
-		cp docker-entrypoint.sh "$version/"
+		cp jenkins.sh "$version/"
 		sed '
 		  s/%%JENKINS_MAJOR%%/'"$version"'/g;
 		  s/%%JENKINS_VERSION%%/'"$fullVersion"'/g;
