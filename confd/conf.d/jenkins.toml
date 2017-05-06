@@ -1,0 +1,6 @@
+[template]
+src="jenkins.tmpl"
+dest="/usr/share/jenkins/rancher/jenkins.properties"
+keys= [
+  "/self/service/metadata/config",
+]
