@@ -1,6 +1,6 @@
 [template]
 src="jenkins.tmpl"
-dest="/usr/share/jenkins/rancher/jenkins.groovy"
+dest="/usr/share/jenkins/rancher/jenkins.json"
 keys= [
   "/self/service/metadata/config",
 ]
